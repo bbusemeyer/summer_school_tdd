@@ -8,6 +8,8 @@ def test_lattice_number_neigbors():
   for place in [(0,0),(0,1),(1,1)]:
     answer = lattice.find_neighbors(place)
     assert len(answer)==4, "Wrong number of neighbors"
+  
+  assert (2,1) in lattice.find_neighbors((1,1))
 
   try:
     fail = True
