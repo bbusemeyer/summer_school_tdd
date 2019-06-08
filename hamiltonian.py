@@ -12,7 +12,8 @@ class Hamiltonian():
     en = 0
     for i in range(self.lattice.Nwidth):
       for j in range(self.lattice.Nheight):
-        for nbr in self.lattice.find_neighbors((i,j)):
-          en += self.coupling/2.0
+        nbrs = self.lattice.find_neighbors((i,j))
+        for nbr in nbrs[:len(nbrs)//2]:
+          en += self.coupling
     return en
 
