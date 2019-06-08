@@ -14,6 +14,6 @@ class Hamiltonian():
       for j in range(self.lattice.Nheight):
         nbrs = self.lattice.find_neighbors((i,j))
         for nbr in nbrs[:len(nbrs)//2]:
-          en += self.coupling
+          en += self.coupling*(-1)**(int(spin_state[i,j])+int(spin_state[nbr]))
     return en
 
