@@ -10,9 +10,8 @@ class Lattice():
   def find_neighbors(self,position):
     ''' return a list of tuples of the nearest neighbors of a tuple/position '''
     # Only implemented for PBC
-    return [(xnew,ynew) for xnew in [(position[0]+1)%self.Nwidth,(position[0]-1)%self.Nwidth] 
-        for ynew in [(position[1]+1)%self.Nheight,(position[1]-1)%self.Nheight]]
-
+    return [(xnew,position[1]) for xnew in [(position[0]+1)%self.Nwidth,(position[0]-1)%self.Nwidth]] + \
+      [(position[1],ynew) for ynew in [(position[1]+1)%self.Nheight,(position[1]-1)%self.Nheight]]
 
 
 
