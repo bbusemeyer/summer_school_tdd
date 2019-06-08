@@ -11,4 +11,4 @@ def test_energy_ferro():
   lattice = Lattice(size,size)
   ham = Hamiltonian(lattice,coupling)
 
-  assert ham.energy(ones((size,size),dtype=bool)) == 2*coupling, "Energy of ferromagnetic state is incorrect."
+  assert ham.energy(ones((size,size),dtype=bool)) == 2*coupling*size*size, "Energy of ferromagnetic state is incorrect."
